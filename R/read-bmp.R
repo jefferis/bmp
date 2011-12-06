@@ -25,6 +25,7 @@
 #' 
 #' Limited to 8 bit greyscale images and 24 bit RGB images.
 #' @param f File to open
+#' @param Verbose Give verbose warnings (default TRUE)
 #' @return array of dims height x width x channels 
 #' @author jefferis
 #' @export
@@ -37,6 +38,7 @@
 #' pr=pixmapGrey(r)
 #' plot(pr)
 #' } 
+read.bmp<-function(f,Verbose=TRUE){
 	con=file(f,open='rb')
   on.exit(close(con))
   if(!is.bmp(con))
@@ -70,7 +72,9 @@
   rounded_row_width_bytes = ceiling(row_width_bytes/4)*4
   bytes_to_trim = row_width_bytes %% 4
   bytes_to_read=rounded_row_width_bytes * h$height
-  if(h$bmp_bytesz==0) warning("invalid byte size information for image")
+  if(h$bmp_bytesz==0) {
+    if(Verbose) warning("invalid byte size information for image")
+  }
   else if(h$bmp_bytesz != bytes_to_read)
     stop("mismatch between predicted and actual number of bytes in image")
   seek(con,h$offset)
