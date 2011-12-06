@@ -95,7 +95,6 @@ read.bmp<-function(f){
 #' @param adjustment number to be added to convert to uint32 (2^32 by default)
 #' @return numeric value of uint32
 #' @author jefferis
-#' @export
 #' @seealso \code{\link{readBin}}
 .ConvertIntToUInt<-function(x,adjustment=2^32){
 	x=as.numeric(x)
