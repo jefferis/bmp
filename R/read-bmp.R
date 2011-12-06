@@ -31,9 +31,10 @@
 read.bmp<-function(f){
 	con=file(f,open='rb')
   on.exit(close(con))
+  if(!is.bmp(con))
+    stop(basename(f)," is not a valid BMP file")
   # file header
   h=list()
-  h$magic=readBin(con,what=raw(),n=2,endian='little')
   h$filesize=ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
   readBin(con,what=1L,size=4,endian='little')
   h$offset=ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
