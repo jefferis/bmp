@@ -23,7 +23,7 @@
 
 #' Open windows BMP format image files
 #' 
-#' Limited to 8 or 16 bit greyscale iamges and 24 bit RGB images
+#' Limited to 8 or 16 bit greyscale images and 24 bit RGB images
 #' @param f File to open
 #' @return array of dims height x width x channels 
 #' @author jefferis
