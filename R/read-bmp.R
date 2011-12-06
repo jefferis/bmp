@@ -28,7 +28,15 @@
 #' @return array of dims height x width x channels 
 #' @author jefferis
 #' @export
-read.bmp<-function(f){
+#' @examples
+#' \dontrun{
+#' library(pixmap)
+#' r=read.bmp('myrgbimage.bmp')
+#' pr=pixmapRGB(r)
+#' r=read.bmp('mygreyimage.bmp')
+#' pr=pixmapGrey(r)
+#' plot(pr)
+#' } 
 	con=file(f,open='rb')
   on.exit(close(con))
   if(!is.bmp(con))
