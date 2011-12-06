@@ -23,7 +23,7 @@
 
 #' Open windows BMP format image files
 #' 
-#' Limited to 8 or 16 bit greyscale images and 24 bit RGB images
+#' Limited to 8 bit greyscale images and 24 bit RGB images.
 #' @param f File to open
 #' @return array of dims height x width x channels 
 #' @author jefferis
@@ -53,7 +53,7 @@ read.bmp<-function(f){
   
   if(h$compress_type!=0)
      stop("Do not know how to handle compressed BMP")
-  if(!h$depth %in% c(8,16,24))
+  if(!h$depth %in% c(8,24))
     stop("Do not know how to handle bit depth: ",h$depth)
   
   bytes_pixel=h$depth / 8
