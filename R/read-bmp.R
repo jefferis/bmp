@@ -88,6 +88,20 @@ read.bmp<-function(f){
   d
 }
 
+#' Returns TRUE if file is a Windows BMP image
+#' 
+#' NB this just checks the magic 'BM' in the first two bytes of the file
+#' @param source file or connection
+#' @return TRUE or FALSE
+#' @author jefferis
+#' @export
+is.bmp<-function(source) {
+  if(inherits(source,'connection'))
+    seek(source,0)
+	magic=readBin(source,what=0L,n=2,size=1L)
+  isTRUE(all.equal(magic,c(66,77)))
+}
+
 #' Fix a 32 bit unsigned integer that has been read as signed
 #' 
 #' This is really just to fix a limitation of readBin/R's 32 bit signed ints  
