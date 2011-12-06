@@ -34,21 +34,21 @@ read.bmp<-function(f){
   # file header
   h=list()
   h$magic=readBin(con,what=raw(),n=2,endian='little')
-  h$filesize=.ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$filesize=ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
   readBin(con,what=1L,size=4,endian='little')
-  h$offset=.ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$offset=ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
   # image header
-  h$header_sz=.ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
-  h$width=.ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
-  h$height=.ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$header_sz=ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$width=ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$height=ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
   h$nplanes=readBin(con,what=1L,size=2,endian='little',signed = FALSE)
   h$depth = readBin(con,what=1L,size=2,endian='little',signed = FALSE)
-  h$compress_type = .ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
-  h$bmp_bytesz = .ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
-  h$hres = .ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
-  h$vres = .ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
-  h$ncolors = .ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
-  h$nimpcolors = .ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$compress_type = ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$bmp_bytesz = ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$hres = ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$vres = ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$ncolors = ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
+  h$nimpcolors = ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
   
   if(!h$depth %in% c(8,16,24))
     stop("Do not know how to handle bit depth: ",h$depth)
@@ -110,7 +110,7 @@ is.bmp<-function(source) {
 #' @return numeric value of uint32
 #' @author jefferis
 #' @seealso \code{\link{readBin}}
-.ConvertIntToUInt<-function(x,adjustment=2^32){
+ConvertIntToUInt<-function(x,adjustment=2^32){
 	x=as.numeric(x)
 	signs=sign(x)
 	x[signs<0]=x[signs<0]+adjustment
