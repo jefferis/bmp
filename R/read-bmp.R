@@ -51,8 +51,11 @@ read.bmp<-function(f){
   h$ncolors = ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
   h$nimpcolors = ConvertIntToUInt(readBin(con,what=1L,size=4,endian='little'))
   
+  if(h$compress_type!=0)
+     stop("Do not know how to handle compressed BMP")
   if(!h$depth %in% c(8,16,24))
     stop("Do not know how to handle bit depth: ",h$depth)
+  
   bytes_pixel=h$depth / 8
   row_width_bytes=h$width * bytes_pixel
   # bmp rows are written to lenth of nearest 4 bytes
