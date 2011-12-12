@@ -25,7 +25,7 @@
 #' 
 #' Limited to 8 bit greyscale images and 24 bit RGB images.
 #' @param f File to open
-#' @param Verbose Give verbose warnings (default TRUE)
+#' @param Verbose Give verbose warnings (default FALSE)
 #' @return array of dims height x width x channels 
 #' @author jefferis
 #' @export
@@ -38,7 +38,7 @@
 #' pr=pixmapGrey(r)
 #' plot(pr)
 #' } 
-read.bmp<-function(f,Verbose=TRUE){
+read.bmp<-function(f,Verbose=FALSE){
 	con=file(f,open='rb')
   on.exit(close(con))
   if(!is.bmp(con))
