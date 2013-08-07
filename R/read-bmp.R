@@ -63,7 +63,7 @@ read.bmp<-function(f,Verbose=FALSE){
   
   if(h$compress_type!=0)
      stop("Do not know how to handle compressed BMP")
-  if(!h$depth %in% c(8,24))
+  if(!h$depth %in% c(8,24,32))
     stop("Do not know how to handle bit depth: ",h$depth)
   
   bytes_pixel=h$depth / 8
@@ -78,17 +78,18 @@ read.bmp<-function(f,Verbose=FALSE){
   else if(h$bmp_bytesz != bytes_to_read)
     stop("mismatch between predicted and actual number of bytes in image")
   seek(con,h$offset)
-  if(h$depth==24){
+  if(h$depth>8){
+    nchans=h$depth/8
     d=readBin(con,what=1L,size=1,n=bytes_to_read,endian='little',signed=FALSE)
     dim(d)=c(rounded_row_width_bytes,h$height)
     # trim off padding bytes
     d=d[1:row_width_bytes,]
     # dims on read are colours, columns, rows
-    dim(d)=c(3,h$width,h$height)
+    dim(d)=c(nchans,h$width,h$height)
     # swap row and colour dimensions
     d=aperm(d,c(3,2,1))
     # flip rows (i.e. Y) and colours (since little endian => BGR)
-    d=d[h$height:1,,3:1]
+    d=d[h$height:1,,nchans:1]
   }
   else {
     d=readBin(con,what=1L,size=bytes_pixel,n=bytes_to_read/bytes_pixel,
