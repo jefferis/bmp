@@ -1,0 +1,2 @@
+export(is.bmp)
+export(read.bmp)
