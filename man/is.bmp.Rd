@@ -1,0 +1,20 @@
+\name{is.bmp}
+\alias{is.bmp}
+\title{Returns TRUE if file is a Windows BMP image}
+\usage{
+  is.bmp(source)
+}
+\arguments{
+  \item{source}{file or connection}
+}
+\value{
+  TRUE or FALSE
+}
+\description{
+  NB this just checks the magic 'BM' in the first two bytes
+  of the file
+}
+\author{
+  jefferis
+}
+
