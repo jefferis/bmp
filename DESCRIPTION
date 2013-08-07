@@ -4,10 +4,10 @@ License: GPL (>=2)
 Title: Read Windows Bitmap (BMP) images
 Author: Gregory Jefferis
 Description: Reads Windows BMP format images. Currently limited to 8 bit
-    greyscale images and 24 bit RGB images. Pure R implementation without
+    greyscale images and 24,32 bit (A)RGB images. Pure R implementation without
     external dependencies.
-Version: 0.1
-Date: 6 Dec 2011
+Version: 0.2
+Date: 2013-08-07
 Suggests:
     pixmap,
     testthat
