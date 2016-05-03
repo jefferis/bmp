@@ -39,7 +39,7 @@
 #' plot(pr)
 #' } 
 read.bmp<-function(f,Verbose=FALSE){
-	con=file(f,open='rb')
+  con=file(f,open='rb')
   on.exit(close(con))
   if(!is.bmp(con))
     stop(basename(f)," is not a valid BMP file")
@@ -74,9 +74,11 @@ read.bmp<-function(f,Verbose=FALSE){
   bytes_to_read=rounded_row_width_bytes * h$height
   if(h$bmp_bytesz==0) {
     if(Verbose) warning("invalid byte size information for image")
+  } else if(h$bmp_bytesz < bytes_to_read){
+    stop("fewer bytes available than required in image!")
+  } else if(h$bmp_bytesz > bytes_to_read){
+    warning("more bytes available than required in image")
   }
-  else if(h$bmp_bytesz != bytes_to_read)
-    stop("mismatch between predicted and actual number of bytes in image")
   seek(con,h$offset)
   if(h$depth>8){
     nchans=h$depth/8
