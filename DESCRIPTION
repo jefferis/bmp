@@ -13,3 +13,4 @@ Suggests:
     testthat
 Collate:
     'read-bmp.R'
+RoxygenNote: 5.0.1.9000
