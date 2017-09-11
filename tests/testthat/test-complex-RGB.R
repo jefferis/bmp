@@ -3,7 +3,7 @@ context("Reading complex RGB images")
 require(pixmap)
 
 test_that("complex RGB BMP image as pixmap is identical to pnm loaded by read.pnm", {
-      pnmfile="../images/5HT1bMARCM-F000001_seg001_lsm.pnm"
+      pnmfile=system.file("images/5HT1bMARCM-F000001_seg001_lsm.pnm", package = 'bmp')
       bmpfile=sub("pnm$","bmp",pnmfile)
       # test red green and blue channel separately
       b = read.bmp(bmpfile)

@@ -3,7 +3,7 @@ context("Reading simple RGB images")
 require(pixmap)
 
 test_that("8 bit RGB BMP image matches pnm equivalent loaded with pixmap", {
-      pnmfile="../images/w5h4-RGB.pnm"
+      pnmfile=system.file("images/w5h4-RGB.pnm", package = 'bmp')
       bmpfile=sub("pnm$","bmp",pnmfile)
       # test red green and blue channel separately
       b = read.bmp(bmpfile)/(2^8-1)
@@ -14,7 +14,7 @@ test_that("8 bit RGB BMP image matches pnm equivalent loaded with pixmap", {
     })
 
 test_that("32 bit ARGB BMP image matches pnm equivalent loaded with pixmap", {
-      pnmfile="../images/explosion_32bit.pnm"
+      pnmfile=system.file("images/explosion_32bit.pnm", package = 'bmp')
       bmpfile=sub("pnm$","bmp",pnmfile)
       # test red green and blue channel separately
       b = read.bmp(bmpfile)/(2^8-1)
@@ -25,7 +25,7 @@ test_that("32 bit ARGB BMP image matches pnm equivalent loaded with pixmap", {
     })
 
 test_that("RGB BMP image converted to pixmap is identical to pnm loaded by read.pnm", {
-      pnmfile="../images/w5h4-RGB.pnm"
+      pnmfile=system.file("images/w5h4-RGB.pnm", package = 'bmp')
       bmpfile=sub("pnm$","bmp",pnmfile)
       # test red green and blue channel separately
       b = read.bmp(bmpfile)

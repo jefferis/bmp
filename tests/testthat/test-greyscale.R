@@ -3,14 +3,14 @@ context("Reading simple greyscale images")
 require(pixmap)
 
 test_that("8 bit bmp image matches pgm equivalent loaded with pixmap", {
-      pgmfile="../images/w5h3-8bit.pgm"
+      pgmfile=system.file("images/w5h3-8bit.pgm", package = 'bmp')
       bmpfile=sub("pgm$","bmp",pgmfile)
       expect_that(read.bmp(bmpfile)/(2^8-1),
           is_equivalent_to(read.pnm(pgmfile)@grey))
     })
 
 test_that("Trying to load a non BMP file throws an error", {
-      pgmfile="../images/w5h3-8bit.pgm"
+      pgmfile=system.file("images/w5h3-8bit.pgm", package = 'bmp')
       expect_that(read.bmp(pgmfile),
           throws_error())
     })
