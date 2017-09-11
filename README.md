@@ -1,3 +1,5 @@
+[![Travis-CI Build Status](https://travis-ci.org/jefferis/bmp.svg?branch=master)](https://travis-ci.org/jefferis/bmp)
+
 Introduction
 ============
   * Simple R package to read [Windows BMP format][bmp] images.
