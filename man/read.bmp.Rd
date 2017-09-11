@@ -30,4 +30,3 @@ plot(pr)
 \author{
 jefferis
 }
-

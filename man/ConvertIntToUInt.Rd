@@ -17,10 +17,9 @@ numeric value of uint32
 \description{
 This is really just to fix a limitation of readBin/R's 32 bit signed ints
 }
-\author{
-jefferis
-}
 \seealso{
 \code{\link{readBin}}
 }
-
+\author{
+jefferis
+}

@@ -18,4 +18,3 @@ NB this just checks the magic 'BM' in the first two bytes of the file
 \author{
 jefferis
 }
-
