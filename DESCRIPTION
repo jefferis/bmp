@@ -6,8 +6,7 @@ Author: Gregory Jefferis
 Description: Reads Windows BMP format images. Currently limited to 8 bit
     greyscale images and 24,32 bit (A)RGB images. Pure R implementation without
     external dependencies.
-Version: 0.2
-Date: 2013-08-07
+Version: 0.3
 Suggests:
     pixmap,
     testthat
