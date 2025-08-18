@@ -1,12 +1,14 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/jefferis/bmp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jefferis/bmp/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/bmp)](https://cran.r-project.org/package=bmp)
+[![Docs](https://img.shields.io/badge/docs-100%25-brightgreen.svg)](https://jefferis.github.io/bmp/)
 <!-- badges: end -->
   
 
-Introduction
-============
-  * Simple R package to read [Windows BMP format][bmp] images.
+## Introduction
+
+  * Simple R package to read [Windows BMP format](https://en.wikipedia.org/wiki/BMP_file_format)
+  images.
   * No external dependencies
   * Currently only reads 8 bit greyscale and 24 or 32 bit RGB images.
   * Limited testing
@@ -28,7 +30,5 @@ if (!require("remotes")) install.packages("remotes")
 remotes::install_github("jefferis/bmp")
 ```
 
-Note: Windows users need [Rtools](https://cran.r-project.org/bin/windows/Rtools/) and [devtools](https://CRAN.R-project.org/package=devtools) to install this way.
-----
+NB Windows users need [Rtools](https://cran.r-project.org/bin/windows/Rtools/) and [devtools](https://CRAN.R-project.org/package=devtools) to install this way.
 
-  [bmp]: https://en.wikipedia.org/wiki/BMP_file_format
