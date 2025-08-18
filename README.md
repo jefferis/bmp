@@ -21,13 +21,11 @@ install.packages("bmp")
 You can, however, download the [tar ball](https://github.com/jefferis/bmp/tarball/master), and run `R CMD INSTALL` on it, or use the **devtools** package to install the development version:
 
 ```r
-# install.packages("devtools")
-
-library(devtools)
-install_github("bmp", "jefferis")
+if (!require("remotes")) install.packages("remotes")
+remotes::install_github("jefferis/bmp")
 ```
 
-Note: Windows users need [Rtools](http://www.murdoch-sutherland.com/Rtools/) and [devtools](https://CRAN.R-project.org/package=devtools) to install this way.
+Note: Windows users need [Rtools](https://cran.r-project.org/bin/windows/Rtools/) and [devtools](https://CRAN.R-project.org/package=devtools) to install this way.
 ----
 
-  [bmp]: http://en.wikipedia.org/wiki/BMP_file_format
+  [bmp]: https://en.wikipedia.org/wiki/BMP_file_format
