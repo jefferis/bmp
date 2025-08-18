@@ -45,15 +45,16 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9">
-<div class="section level1">
-<div class="page-header"><h1 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h1></div>
+<div class="section level2">
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
 <ul>
 <li>Simple R package to read <a href="https://en.wikipedia.org/wiki/BMP_file_format" class="external-link">Windows BMP format</a> images.</li>
 <li>No external dependencies</li>
 <li>Currently only reads 8 bit greyscale and 24 or 32 bit RGB images.</li>
 <li>Limited testing</li>
 </ul>
+</div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -71,11 +72,7 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://remotes.r-lib.org" class="external-link">"remotes"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"jefferis/bmp"</span><span class="op">)</span></span></code></pre></div>
-</div>
-</div>
-<div class="section level2">
-<h2 id="note-windows-users-need-rtools-and-devtools-to-install-this-way">Note: Windows users need <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external-link">Rtools</a> and <a href="https://CRAN.R-project.org/package=devtools" class="external-link">devtools</a> to install this way.<a class="anchor" aria-label="anchor" href="#note-windows-users-need-rtools-and-devtools-to-install-this-way"></a>
-</h2>
+<p>NB Windows users need <a href="https://cran.r-project.org/bin/windows/Rtools/" class="external-link">Rtools</a> and <a href="https://CRAN.R-project.org/package=devtools" class="external-link">devtools</a> to install this way.</p>
 </div>
 </div>
 
@@ -113,6 +110,7 @@
 <ul class="list-unstyled">
 <li><a href="https://github.com/jefferis/bmp/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/jefferis/bmp/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://cran.r-project.org/package=bmp" class="external-link"><img src="http://www.r-pkg.org/badges/version/bmp" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://jefferis.github.io/bmp/" class="external-link"><img src="https://img.shields.io/badge/docs-100%25-brightgreen.svg" alt="Docs"></a></li>
 </ul>
 </div>
 
