@@ -20,3 +20,4 @@ Collate:
     'read-bmp.R'
 RoxygenNote: 7.3.2
 Encoding: UTF-8
+URL: http://jefferis.github.io/bmp/

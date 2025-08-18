@@ -1,5 +1,8 @@
-[![Travis-CI Build Status](https://travis-ci.org/jefferis/bmp.svg?branch=master)](https://travis-ci.org/jefferis/bmp)
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/jefferis/bmp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jefferis/bmp/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/bmp)](https://cran.r-project.org/package=bmp)
+<!-- badges: end -->
+  
 
 Introduction
 ============
