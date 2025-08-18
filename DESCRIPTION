@@ -12,7 +12,7 @@ Authors@R:
 Description: Reads Windows BMP format images. Currently limited to 8 bit
     greyscale images and 24,32 bit (A)RGB images. Pure R implementation without
     external dependencies.
-Version: 0.3
+Version: 0.3.1
 Suggests:
     pixmap,
     testthat
@@ -20,4 +20,5 @@ Collate:
     'read-bmp.R'
 RoxygenNote: 7.3.2
 Encoding: UTF-8
-URL: http://jefferis.github.io/bmp/
+URL: https://github.com/jefferis/bmp
+BugReports: https://github.com/jefferis/bmp/issues
