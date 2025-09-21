@@ -1,3 +1,7 @@
+# bmp 0.3.2
+
+* update developer install instructions
+
 # bmp 0.3.1
 * minor version update with doc fixes for CRAN
 
