@@ -23,7 +23,7 @@ install.packages("bmp")
 ```
 
 ### Bleeding Edge
-You can, however, download the [tar ball](https://github.com/jefferis/bmp/tarball/master), and run `R CMD INSTALL` on it, or use the **devtools** package to install the development version:
+You can, however, use the **remotes** package to install the development version:
 
 ```r
 if (!require("remotes")) install.packages("remotes")
@@ -31,4 +31,3 @@ remotes::install_github("jefferis/bmp")
 ```
 
 NB Windows users need [Rtools](https://cran.r-project.org/bin/windows/Rtools/) and [devtools](https://CRAN.R-project.org/package=devtools) to install this way.
-
